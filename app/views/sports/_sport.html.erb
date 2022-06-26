@@ -1,27 +1,24 @@
 <div id="<%= dom_id sport %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <span><%= sport.name %></span>
-  </p>
+  <h1 class="font-bold text-4xl mb-4"><%= sport.name %></h1>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Kind:</strong>
-    <span><%= sport.kind %></span>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Team size:</strong>
-    <span><%= sport.team_size %></span>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Team total size:</strong>
-    <span><%= sport.team_total_size %></span>
-  </p>
+  <table class="text-center mb-4">
+    <tr class="bg-gray-900">
+      <th class="font-bold px-6 py-4 border-r border-gray-700"><%= Sport.human_attribute_name :kind %></th>
+      <td class="px-6 py-4"><%= sport.kind %></td>
+    </tr>
+    <tr class="bg-gray-800">
+      <th class="font-bold px-6 py-4 border-r border-gray-700"><%= Sport.human_attribute_name :team_size %></th>
+      <td class="px-6 py-4"><%= sport.team_size %></td>
+    </tr>
+    <tr class="bg-gray-900">
+      <th class="font-bold px-6 py-4 border-r border-gray-700"><%= Sport.human_attribute_name :team_total_size %></th>
+      <td class="px-6 py-4"><%= sport.team_total_size %></td>
+    </tr>
+  </table>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this sport", sport, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this sport', edit_sport_path(sport), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this sport", sport, class: "rounded-lg py-3 px-5 bg-gray-600 hover:bg-gray-500 transition inline-block font-medium" %>
+    <%= link_to "Edit this sport", edit_sport_path(sport), class: "rounded-lg py-3 ml-2 px-5 bg-gray-600 hover:bg-gray-500 transition inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>
