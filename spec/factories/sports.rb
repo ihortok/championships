@@ -12,9 +12,9 @@
 #
 FactoryBot.define do
   factory :sport do
-    name { "MyString" }
-    kind { 1 }
-    team_size { 1 }
-    team_total_size { 1 }
+    name { Faker::Hipster.unique.word }
+    kind { :team }
+    team_size { 5 }
+    team_total_size { 9 }
   end
 end
