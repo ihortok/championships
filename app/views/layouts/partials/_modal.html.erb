@@ -4,7 +4,7 @@
       <span data-action="click->modal#close touch->modal#close" class="absolute top-5 right-5 inline-block text-gray-300 hover:text-white cursor-pointer float-right">
         <i class="fa-solid fa-xmark w-8 h-8 transition"></i>
       </span>
-      <turbo-frame id="modal_content"></turbo-frame>
+      <%= turbo_frame_tag "modal_content", class: "flex justify-center" %>
     </div>
   </div>
 </div>

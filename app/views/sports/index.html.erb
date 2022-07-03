@@ -10,15 +10,21 @@
   <% @sports.each do |sport| %>
     <div class="relative sm:pb-[100%]">
       <div class="absolute z-10 top-0 right-0 flex gap-2 p-2">
-        <%= link_to edit_sport_path(sport), class: "group w-9 h-9 flex items-center justify-center rounded bg-gray-600 hover:bg-gray-500 transition" do %>
+        <%= link_to edit_sport_path(sport),
+            class: "group w-9 h-9 flex items-center justify-center rounded bg-gray-600 hover:bg-gray-500 transition",
+            data: { turbo_frame: "modal_content", action: "modal#open" } do %>
           <i class="fa-solid fa-pencil w-4 h-4 transition text-gray-400 group-hover:text-white"></i>
         <% end %>
-        <%= link_to sport_path(sport), class: "group relative w-9 h-9 flex items-center justify-center rounded transition", data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") } do %>
+        <%= link_to sport_path(sport),
+            class: "group relative w-9 h-9 flex items-center justify-center rounded transition",
+            data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") } do %>
           <span class="absolute top-0 letf-0 w-full h-full bg-red-600 group-hover:bg-red-500 rounded transition opacity-50"></span>
           <i class="fa-solid fa-trash-can z-10 w-4 h-4 transition text-gray-400 group-hover:text-white"></i>
         <% end %>
       </div>
-      <%= link_to sport_path(sport), class: "sm:absolute top-0 left-0 flex items-center justify-center w-full h-full p-2 pt-12 sm:pt-0 text-3xl rounded-lg bg-gray-800 hover:bg-gray-700 transition" do %>
+      <%= link_to sport_path(sport),
+                  class: "sm:absolute top-0 left-0 flex items-center justify-center w-full h-full p-2 pt-12 sm:pt-0 text-3xl rounded-lg bg-gray-800 hover:bg-gray-700 transition",
+                  data: { turbo_frame: "modal_content", action: "modal#open" } do %>
         <%= sport.name %>
       <% end %>
     </div>
