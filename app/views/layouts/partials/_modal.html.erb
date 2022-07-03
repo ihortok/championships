@@ -1,0 +1,10 @@
+<div id="modal" class="hidden fixed z-50 top-0 left-0 w-full h-full overflow-auto">
+  <div class="container mx-auto mt-32 mb-12 px-5">
+    <div class="relative lg:w-2/3 mx-auto p-5 pt-12 bg-gray-400 rounded">
+      <span data-action="click->modal#close touch->modal#close" class="absolute top-5 right-5 inline-block text-gray-300 hover:text-white cursor-pointer float-right">
+        <i class="fa-solid fa-xmark w-8 h-8 transition"></i>
+      </span>
+      <turbo-frame id="modal_content"></turbo-frame>
+    </div>
+  </div>
+</div>
